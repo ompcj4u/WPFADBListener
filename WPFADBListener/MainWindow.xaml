@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPFADBListener.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFADBListener"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="WPF ADB Listener Sample" Height="350" Width="525">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="257*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" 
+                  ColumnHeaderHeight="40" RowHeight="35" Name="datagridDevices" ItemsSource="{Binding}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Device ID"  Binding="{Binding Path=DeviceID}"  Width="150" TextBlock.TextAlignment="Center"/>
+                <DataGridTextColumn Header="Device Model" Binding="{Binding Path=DeviceModel}" Width="100"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" >
+            <Button Content="youtube version" Width="120" Margin="0,5,5,5" Name="btnGetAppVersion" Click="btnGetAppVersion_Click"/>
+            <Button Content="open youtube" Width="120" Margin="0,5,5,5" Name="btnOpenApplication" Click="btnOpenApplication_Click"/>
+            <Button Content="close youtube" Width="120" Margin="0,5,5,5" Name="btnCloseApplication" Click="btnCloseApplication_Click"/>
+            <Button Content="Refresh" Margin="0,5,5,5" Name="btnRefresh" Click="btnRefresh_Click" />
+        </StackPanel>
+        
+    </Grid>
+</Window>

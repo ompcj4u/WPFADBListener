@@ -95,11 +95,6 @@ namespace ReadCounterOstan.AndroidCommunication
             }
         }
 
-        public bool CopyFile(string deviceID, string fileSourceAddress, string fileDestAddress)
-        {
-            return com.CopyFileToPhone(deviceID, fileSourceAddress, fileDestAddress);
-        }
-
         /// <summary>
         /// get an application version (int), zero means not installed
         /// </summary>
